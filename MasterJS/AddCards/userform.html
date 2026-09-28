@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "Helvetica Now Display";
+            box-sizing: border-box;
+        }
+        html,body{
+            background-color: #222;
+            color:#ffff;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 2.5rem;
+            margin-top: 20px;
+        }
+        #form{
+            display:flex;
+            justify-content: center;
+            margin: 21px auto;
+            border: 3px solid #444;
+            padding: 22px;
+            width: max-content;
+            border-radius: 5px;
+        }
+        form{
+            width: min-content;
+            height: 40vh;
+        }
+        input{
+            background-color: #222;
+            color: #ffff;
+            border:3px solid #333;
+            width: 350px;
+            font-size: 0.9rem;
+            padding: 9px 18px;
+            margin: 5px;
+        }
+        input[type="submit"]{
+            background-color: rgb(32, 79, 206);
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: none;
+            margin-top: 12px;
+        }
+        input[type="submit"]:hover{
+            background-color:  rgb(53, 98, 221);
+        }
+        #main{
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;        
+        }
+        .card{
+            margin: 20px 22px;
+            padding: 12px 22px;
+            width: 300px;
+            height: 45vh;
+            border: 2px solid #444;
+            border-radius: 9px;
+            user-select: none;
+        }
+        .card:hover{
+            cursor: pointer;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 20px rgb(231 218 218 / 15%);
+        }
+        .profile{
+            background-color: red;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        h3{
+            font-size: 1.7rem;
+            margin:5px 0px;
+            font-weight: 100;
+        }
+        h5{
+            font-size: 1.3rem;
+            font-weight: 100;
+        }
+        p{
+            font-size: 0.9rem;
+            font-weight: 100;
+            margin: 5px 0px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile Details</h1>
+    <div id="form">
+        <form action="">
+            <input type="text" placeholder="Profile Picture Url">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Profession">
+            <input type="text" placeholder="Profile Summary">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="main">
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
