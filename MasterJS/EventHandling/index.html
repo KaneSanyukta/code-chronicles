@@ -10,59 +10,48 @@
             color:#ffff;
             padding: 0;
             margin: 0;
-            overflow: hidden;
-            position: relative;
+            /* overflow: hidden;
+            position: relative; */
             /* display: flex;
             align-items: center;
             justify-content: center; */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
-        .boll{
-            position: absolute;
-            transition: all cubic-bezier(0.19, 1, 0.22, 1) .3s;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        #main{
+            margin: 5px 3px;
         }
-        .line{
-            text-decoration: line-through;
-        }
-        li{
-            cursor: pointer;
-        }
-        #a{
-            background-color: chartreuse;
-            width: 500;
-            height: 500;
-        }
-        #b{
-            background-color: rebeccapurple;
-            width: 350;
-            height: 350;
-        }
-        #c{
-            background-color: orangered;
-            width: 200;
-            height: 200;
-        }
-        button{
-            background-color: darkgreen;
+        input{
+            width:300px;
+            height: 7vh;
+            padding: 3px 22px;
+            font-size: .9rem;
             color: #ffff;
-            padding: 12px 22px;
-            font-size: 0.9rem;
+            font-weight: 400;
+            background-color: #222;
+            border: 3px solid #333;
+            border-radius: 5px;
         }
+        h3{
+            font-weight: 300;
+        }
+        p{
+            font-style: italic;
+        }
+        
     </style>
 </head>
 <body>
     <!-- <div class="boll"></div> -->
-    <h2>Capturing working</h2>
     <div id="main">
-        <div id="a">
-            <div id="b">
-                <div id="c">
-                    <button>Click Me!</button>
-                </div>
-            </div>
-        </div>
+        <h1>Letter calulator</h1>
+        <form>
+            <input type="text" name="" id="name" placeholder="Enter here">
+            <p>Letters limit 50.</p>
+            <h3>Current letter count is <span>0</span></h3>
+        </form>
     </div>
 </body>
 <script src="script.js"></script>

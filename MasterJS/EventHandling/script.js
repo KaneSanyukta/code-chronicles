@@ -25,20 +25,42 @@
 
 // Bubbling working
 
-let a = document.querySelector("#a");
-let b = document.querySelector("#b");
-let c = document.querySelector("#c");
-let button = document.querySelector("button");
+// let a = document.querySelector("#a");
+// let b = document.querySelector("#b");
+// let c = document.querySelector("#c");
+// let button = document.querySelector("button");
 
-a.addEventListener("click",()=>{
-    console.log("Clicked on a");
-}, true); // Second called
-b.addEventListener("click",()=>{
-    console.log("Clicked on b");
-}); // Skip and follow bubbling
-c.addEventListener("click",()=>{
-    console.log("Clicked on c");
-}); // Skipped and follow bubbling
-button.addEventListener("click",()=>{
-    console.log("Clicked on button");
-},true); // first called
+// a.addEventListener("click",()=>{
+//     console.log("Clicked on a");
+// }, true); // Second called
+// b.addEventListener("click",()=>{
+//     console.log("Clicked on b");
+// }); // Skip and follow bubbling
+// c.addEventListener("click",()=>{
+//     console.log("Clicked on c");
+// }); // Skipped and follow bubbling
+// button.addEventListener("click",()=>{
+//     console.log("Clicked on button");
+// },true); // first called
+
+
+// Letter calculator
+
+let input = document.querySelector("input");
+let p = document.querySelector("p");
+let span = document.querySelector("span");
+
+input.addEventListener("input",(dets)=>{
+    let val = input.value;
+    span.textContent = input.value.length;
+    if(val.length>=50){
+        p.style.color ="red";
+        p.textContent = "You exceed you letter limit.";
+        span.style.color = "red";
+    }else{
+        p.style.color ="#ffff";
+        p.textContent = "Letters limit 50.";
+        span.style.color = "#fff";
+    }
+});
+
