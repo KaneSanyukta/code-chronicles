@@ -5,6 +5,7 @@
     <title>EventsInJS</title>
     <style>
         html,body{
+            font-family: "Helvetica Now Display";
             background-color: #222;
             color:#ffff;
             padding: 0;
@@ -28,18 +29,41 @@
         li{
             cursor: pointer;
         }
+        #a{
+            background-color: chartreuse;
+            width: 500;
+            height: 500;
+        }
+        #b{
+            background-color: rebeccapurple;
+            width: 350;
+            height: 350;
+        }
+        #c{
+            background-color: orangered;
+            width: 200;
+            height: 200;
+        }
+        button{
+            background-color: darkgreen;
+            color: #ffff;
+            padding: 12px 22px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <!-- <div class="boll"></div> -->
-    <h2>Bubbling Example</h2>
-    <ul>
-        <li>Apple</li>
-        <li>Guava</li>
-        <li>Mango</li>
-        <li>Banana</li>
-        <li>Orange</li>
-    </ul>
+    <h2>Bubbling working</h2>
+    <div id="main">
+        <div id="a">
+            <div id="b">
+                <div id="c">
+                    <button>Click Me!</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

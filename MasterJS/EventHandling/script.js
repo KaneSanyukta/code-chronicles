@@ -15,10 +15,30 @@
 //     boll.style.left = dets.clientX + "px";
 // });
 
-let  ul = document.querySelector("ul");
+// let  ul = document.querySelector("ul");
 
-ul.addEventListener("click",(dets)=>{
-    // alert("Clicked");
-    // console.log(dets);
-    dets.target.classList.toggle("line");
-});
+// ul.addEventListener("click",(dets)=>{
+//     // alert("Clicked");
+//     // console.log(dets);
+//     dets.target.classList.toggle("line");
+// });
+
+// Bubbling working
+
+let a = document.querySelector("#a");
+let b = document.querySelector("#b");
+let c = document.querySelector("#c");
+let button = document.querySelector("button");
+
+a.addEventListener("click",()=>{
+    console.log("Clicked on a");
+})
+b.addEventListener("click",()=>{
+    console.log("Clicked on b");
+})
+c.addEventListener("click",()=>{
+    console.log("Clicked on c");
+})
+button.addEventListener("click",()=>{
+    console.log("Clicked on button");
+})
