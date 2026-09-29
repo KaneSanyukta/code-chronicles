@@ -32,13 +32,13 @@ let button = document.querySelector("button");
 
 a.addEventListener("click",()=>{
     console.log("Clicked on a");
-})
+}, true); // Second called
 b.addEventListener("click",()=>{
     console.log("Clicked on b");
-})
+}); // Skip and follow bubbling
 c.addEventListener("click",()=>{
     console.log("Clicked on c");
-})
+}); // Skipped and follow bubbling
 button.addEventListener("click",()=>{
     console.log("Clicked on button");
-})
+},true); // first called
