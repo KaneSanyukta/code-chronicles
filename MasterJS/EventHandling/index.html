@@ -21,9 +21,11 @@
             flex-direction: column;
         }
         #main{
-            margin: 5px 3px;
+            margin:3px;
         }
         input{
+            direction: none;
+            margin-bottom: 12px;
             width:300px;
             height: 7vh;
             padding: 3px 22px;
@@ -37,20 +39,46 @@
         h3{
             font-weight: 300;
         }
-        p{
-            font-style: italic;
+        input[type="submit"]{
+            border: none;
+            width: 100px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: rgb(25 134 193);
         }
-        
+        p{
+            display:none;
+            font-style: italic;
+            color: red;
+            margin: 3px;
+            font-size: .9rem;
+        }
+        form{
+            display: inline-flex;
+            flex-direction: column;        
+        }
+        .btn{
+            display: inline-flex;
+            align-self: flex-end;
+        }
     </style>
 </head>
 <body>
     <!-- <div class="boll"></div> -->
     <div id="main">
-        <h1>Letter calulator</h1>
+        <h1>Simple Form</h1>
         <form>
-            <input type="text" name="" id="name" placeholder="Enter here">
-            <p>Letters limit 50.</p>
-            <h3>Current letter count is <span>0</span></h3>
+            <input type="text" name="" id="name" placeholder="Enter name" autocomplete="off">
+            <p>Name must should contains atlist 3 letter.</p>
+            <input type="text" name="" id="email" placeholder="Enter eamil" autocomplete="off">
+            <p>Enter valid email(eg.'test@gmail.com').</p>
+            <input type="password" name="" id="password" placeholder="Enter password" autocomplete="off">
+            <input type="password" name="" id="confirm_password" placeholder="Confirm password" autocomplete="off">
+            <p>Confirm password not matches to password.</p>
+            <div class="btn">
+                <input type="submit" value="Submit">
+            </div>
         </form>
     </div>
 </body>

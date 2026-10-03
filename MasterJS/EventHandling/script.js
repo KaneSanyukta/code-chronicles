@@ -45,22 +45,54 @@
 
 
 // Letter calculator
+// let input = document.querySelector("input");
+// let p = document.querySelector("p");
+// let span = document.querySelector("span");
 
-let input = document.querySelector("input");
-let p = document.querySelector("p");
-let span = document.querySelector("span");
+// input.addEventListener("input",(dets)=>{
+//     let val = input.value;
+//     span.textContent = input.value.length;
+//     if(val.length>=50){
+//         p.style.color ="red";
+//         p.textContent = "You exceed you letter limit.";
+//         span.style.color = "red";
+//     }else{
+//         p.style.color ="#ffff";
+//         p.textContent = "Letters limit 50.";
+//         span.style.color = "#fff";
+//     }
+// });
 
-input.addEventListener("input",(dets)=>{
-    let val = input.value;
-    span.textContent = input.value.length;
-    if(val.length>=50){
-        p.style.color ="red";
-        p.textContent = "You exceed you letter limit.";
-        span.style.color = "red";
+// Simple form validation
+
+let username = document.querySelector("#name");
+let email = document.querySelector("#email");
+let password = document.querySelector("#password");
+let c_password = document.querySelector("#confirm_password");
+let p = document.querySelectorAll("p");
+let form = document.querySelector("form");
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+form.addEventListener("submit",(dets)=>{
+    dets.preventDefault();
+    console.log(dets);
+    console.log(p);
+
+    if(username.value.length<=2){
+        p[0].style.display ="initial";
     }else{
-        p.style.color ="#ffff";
-        p.textContent = "Letters limit 50.";
-        span.style.color = "#fff";
+        p[0].style.display = "none";
     }
+    if(!emailRegex.test(email.value)){
+        p[1].style.display ="initial";
+    }else{
+        p[1].style.display = "none";
+    }
+    if(c_password.value!==password.value){
+        p[2].style.display ="initial";
+    }else{
+        p[2].style.display = "none";
+    }
+    
 });
+
 
