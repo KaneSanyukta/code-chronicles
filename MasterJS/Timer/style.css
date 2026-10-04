@@ -1,0 +1,192 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #1d3b68, transparent 40%),
+        radial-gradient(circle at bottom right, #35195c, transparent 40%),
+        #080b12;
+
+    color: white;
+}
+
+
+/* Main Glass Card */
+
+.download-card {
+    width: 380px;
+    padding: 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* Download Icon */
+
+.icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Heading */
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.file-name {
+    color: #a9b1c3;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/* Progress Bar */
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #4facfe,
+        #00f2fe
+    );
+
+    transition: width 0.3s ease;
+}
+
+
+/* Progress Information */
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 12px;
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    color: #a9b1c3;
+}
+
+
+/* Button */
+
+button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: white;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.3);
+
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.45);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+small{
+    font-size: 13px;
+    color: #a9b1c3;
+}
+
+/* Mobile */
+
+@media (max-width: 450px) {
+
+    .download-card {
+        width: 90%;
+        padding: 28px;
+    }
+
+}
+
