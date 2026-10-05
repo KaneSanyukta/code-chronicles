@@ -65,34 +65,34 @@
 
 // Simple form validation
 
-let username = document.querySelector("#name");
-let email = document.querySelector("#email");
-let password = document.querySelector("#password");
-let c_password = document.querySelector("#confirm_password");
-let p = document.querySelectorAll("p");
-let form = document.querySelector("form");
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-form.addEventListener("submit",(dets)=>{
-    dets.preventDefault();
-    console.log(dets);
-    console.log(p);
+// let username = document.querySelector("#name");
+// let email = document.querySelector("#email");
+// let password = document.querySelector("#password");
+// let c_password = document.querySelector("#confirm_password");
+// let p = document.querySelectorAll("p");
+// let form = document.querySelector("form");
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// form.addEventListener("submit",(dets)=>{
+//     dets.preventDefault();
+//     console.log(dets);
+//     console.log(p);
 
-    if(username.value.length<=2){
-        p[0].style.display ="initial";
-    }else{
-        p[0].style.display = "none";
-    }
-    if(!emailRegex.test(email.value)){
-        p[1].style.display ="initial";
-    }else{
-        p[1].style.display = "none";
-    }
-    if(c_password.value!==password.value){
-        p[2].style.display ="initial";
-    }else{
-        p[2].style.display = "none";
-    }
+//     if(username.value.length<=2){
+//         p[0].style.display ="initial";
+//     }else{
+//         p[0].style.display = "none";
+//     }
+//     if(!emailRegex.test(email.value)){
+//         p[1].style.display ="initial";
+//     }else{
+//         p[1].style.display = "none";
+//     }
+//     if(c_password.value!==password.value){
+//         p[2].style.display ="initial";
+//     }else{
+//         p[2].style.display = "none";
+//     }
     
-});
+// });
 
 

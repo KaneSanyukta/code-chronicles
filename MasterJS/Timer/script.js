@@ -2,7 +2,7 @@ let downloadBtn = document.querySelector("#downloadBtn");
 let progressText = document.querySelector("#progressText");
 let statusText = document.querySelector("#statusText")
 let progress = document.querySelector("#progressBar");
-let secondes = 10;
+let secondes = 5;
 let count = 0;
 downloadBtn.addEventListener("click",function(){
     startDownload();
@@ -10,8 +10,8 @@ downloadBtn.addEventListener("click",function(){
 
 
 function startDownload(){
+    document.querySelector("small").textContent ="Double click for stop download.";
     let intervals = setInterval(()=>{
-        document.querySelector("small").textContent ="Double click for stop download.";
         if(count<=99){
             count++;
             statusText.textContent = "Downloading...";
