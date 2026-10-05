@@ -1,42 +1,59 @@
-//Saves changes on loacl storage 
-if(localStorage.getItem("theme")){
-    document.body.classList.add(localStorage.getItem("theme"));
-}else{
-    setDarkOrLight();
+const themeToggle = document.querySelector("#themeToggle");
+const themeText = document.querySelector("#themeText");
+
+const systemTheme = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+);
+
+
+// Apply theme to the page
+function applyTheme(theme) {
+
+    document.body.classList.remove("dark", "light");
+    document.body.classList.add(theme);
+
+    themeText.textContent =
+        theme === "dark" ? "Light Mode" : "Dark Mode";
 }
 
 
-// Control by system mode
-function setDarkOrLight(){
-    if(window.matchMedia("(prefers-color-scheme: dark)").matches){
-        document.body.classList.remove("light"); 
-        document.body.classList.add("dark");
-    }else{
-        document.body.classList.remove("dark");
-        document.body.classList.add("light");
-        document.querySelector("#themeText").textContent="Dark Mode";
-    }
+// Get system theme
+function getSystemTheme() {
+
+    return systemTheme.matches ? "dark" : "light";
 }
 
-setDarkOrLight();
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{
-    if(!localStorage.getItem("theme")) setDarkOrLight();
-});
 
-// Control by Button
-let btn = document.querySelector("#themeToggle");
+// Load saved theme or system theme
+const savedTheme = localStorage.getItem("theme");
 
-btn.addEventListener("click",()=>{
-    if(document.body.classList.contains("dark")){
-        document.body.classList.remove("dark");
-        document.body.classList.add("light"); 
-        document.querySelector("#themeText").textContent="Dark Mode";
-        localStorage.setItem("theme","light");
-    }else{
-        document.body.classList.remove("light"); 
-        document.body.classList.add("dark");
-        localStorage.setItem("theme","dark");
+applyTheme(savedTheme || getSystemTheme());
+
+
+// Follow system theme if user has not manually selected one
+systemTheme.addEventListener("change", () => {
+
+    if (!localStorage.getItem("theme")) {
+        applyTheme(getSystemTheme());
     }
+
 });
 
+
+// Control by button
+themeToggle.addEventListener("click", () => {
+
+    const currentTheme = document.body.classList.contains("dark")
+        ? "dark"
+        : "light";
+
+    const newTheme = currentTheme === "dark"
+        ? "light"
+        : "dark";
+
+    applyTheme(newTheme);
+
+    localStorage.setItem("theme", newTheme);
+
+});
 
